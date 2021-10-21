@@ -1,5 +1,13 @@
-export { setupArea } from './setupArea';
-export { setupTitle } from './setupTitle';
-export { setupGameBoard } from './setupGameBoard';
-export { registerEventListeners } from './registerEventListeners';
-export { embedHelpFloater } from './embedHelpFloater';
+import { setupArea } from './setupArea';
+import { setupTitle } from './setupTitle';
+import { setupGameBoard } from './setupGameBoard';
+import { registerEventListeners } from './registerEventListeners';
+import { embedHelpFloater } from './embedHelpFloater';
+
+export default {
+    setupArea,
+    setupTitle,
+    setupGameBoard,
+    registerEventListeners,
+    embedHelpFloater,
+}
