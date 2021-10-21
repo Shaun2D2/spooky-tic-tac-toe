@@ -1,10 +1,7 @@
-import { setupArea, setupGameBoard } from "./scripts";
+import * as scripts from "./scripts";
 
-const setup = [
-    setupArea,
-    setupGameBoard
-];
+import './index.scss';
 
-// setup the game like a champion
-setup.forEach((step) => step.call());
+// // setup the game like a champion
+Object.values(scripts).forEach((step) => step.call());
 

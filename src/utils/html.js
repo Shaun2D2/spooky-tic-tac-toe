@@ -2,6 +2,8 @@ export const composeTag = (tag, id, classNames) => `<${tag} ${id ? `id=${id}` : 
 
 export const fetchElement = (element) => typeof element === "object" ? element : document.querySelector(element);
 
+export const fetchAllElements = (selector) => document.querySelectorAll(selector);
+
 export const injectHtmlElement = (parent, tag, id, classNames) => {
     const el = fetchElement(parent);
 
@@ -12,8 +14,6 @@ export const injectHtmlElement = (parent, tag, id, classNames) => {
 
 export const injectHtmlContent = (el, html) => {
     el.innerHTML += html;
-
-    console.log(el.innerHTML);
 };
 
 export const injectRootHtmlElement = () => injectHtmlElement('body', 'div', 'game-area');

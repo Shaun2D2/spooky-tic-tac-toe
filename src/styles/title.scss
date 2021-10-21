@@ -1,0 +1,30 @@
+@keyframes float {
+    0% { 
+        transform: scale(1);
+    }
+    25% { 
+        transform: scale(1.1);
+    }
+    50% { 
+        transform: scale(1);
+    }
+    75% { 
+        transform: scale(1.1);
+    }
+    100% { 
+        transform: scale(1);
+    }
+}
+
+.spooky-title {
+    font-family: 'Creepster', cursive;
+    text-align: center;
+    font-size: 3.5rem;
+    margin-top: 0px;
+    transition: color .5s linear;
+    &:hover {
+        animation: float 5.5s linear infinite;
+        color: $flame
+    }
+
+}

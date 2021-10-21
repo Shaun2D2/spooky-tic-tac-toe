@@ -1,1 +1,1 @@
-export { injectHtmlElement, injectRootHtmlElement, findHtmlElement, injectHtmlContent } from './html';
+export { injectHtmlElement, injectRootHtmlElement, findHtmlElement, injectHtmlContent, fetchAllElements } from './html';
