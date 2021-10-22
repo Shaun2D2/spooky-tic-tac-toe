@@ -8,6 +8,6 @@ export default {
     setupArea,
     setupTitle,
     setupGameBoard,
-    registerEventListeners,
     embedHelpFloater,
+    registerEventListeners,
 }

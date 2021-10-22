@@ -53,7 +53,16 @@ tr:nth-child(3) {
     }
 }
 
-.cell-selected {
+.cell-selected.cell-selected {
     // background-image: url("../images/skull.png");
     background-repeat: no-repeat;
+    opacity: 1;
+}
+
+.cell-selected-player1.cell-selected-player1 {
+    background-color: red;
+}
+
+.cell-selected-player2.cell-selected-player2 {
+    background-color: purple;
 }

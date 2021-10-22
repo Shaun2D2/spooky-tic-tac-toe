@@ -1,4 +1,4 @@
-export const composeTag = (tag, id, classNames) => `<${tag} ${id ? `id=${id}` : ''} ${classNames ? `class=${classNames.toString(' ')}` : `` }></${tag}>`;
+export const composeTag = (tag, id, classNames) => `<${tag} ${id && `id=${id}`} ${classNames && `class=${classNames.toString(' ')}`}></${tag}>`;
 
 export const fetchElement = (element) => typeof element === "object" ? element : document.querySelector(element);
 
