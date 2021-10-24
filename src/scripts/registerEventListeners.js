@@ -23,4 +23,8 @@ export const registerEventListeners = () => {
         });
 
     });
+
+    document.querySelector('.starburst__card-button').addEventListener('click', () => {
+        document.querySelector('.full-screen-takeover').classList.remove('full-screen-takeover--show');
+    });
 }

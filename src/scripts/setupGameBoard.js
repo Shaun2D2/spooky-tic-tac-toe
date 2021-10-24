@@ -50,41 +50,59 @@ const gameBoard = card`
     ${gameTable}
 `;
 
-console.log(gameTable, gameBoard);
+const fullScreenTakeover = `
+    <div class="full-screen-takeover">
+        <div class="starburst"></div>
+        <div class="starburst__card">
+            <div class="starburst__card-body">
+                <img src="https://via.placeholder.com/250" class="starburst__image" />
+                <div class="starburst__description">
+                    <h3 class="starburst__card-title">Holy Water Found!</h3>
+                    <p class="starburst__card-description">Some really cool description here</p>
+                </div>
+                <button class="starburst__card-button">Dismiss</button>
+            </div>
+        </div>
+    </div>
+`;
 
 const UI_CONFIG = [
     {
         target: 'body',
-        tag: 'div',
-        attributes: {
-            class: 'play-area'
-        }
-    },
-    {
-        target: '.play-area',
-        tag: 'div',
-        attributes: {
-            class: 'game-details'
-        }
-    },
-    {
-        target: '.play-area',
-        tag: 'div',
-        attributes: {
-            class: 'game-board'
-        }
-    },
-    {
-        target: '.game-details',
-        content: [
-            activePlayerCard,
-            scoreCard
-        ]
-    },
-    {
-        target: '.game-board',
-        content: gameTable
+        content: fullScreenTakeover
     }
+    // {
+    //     target: 'body',
+    //     tag: 'div',
+    //     attributes: {
+    //         class: 'play-area'
+    //     }
+    // },
+    // {
+    //     target: '.play-area',
+    //     tag: 'div',
+    //     attributes: {
+    //         class: 'game-details'
+    //     }
+    // },
+    // {
+    //     target: '.play-area',
+    //     tag: 'div',
+    //     attributes: {
+    //         class: 'game-board'
+    //     }
+    // },
+    // {
+    //     target: '.game-details',
+    //     content: [
+    //         activePlayerCard,
+    //         scoreCard
+    //     ]
+    // },
+    // {
+    //     target: '.game-board',
+    //     content: gameTable
+    // }
 ];
 
 
