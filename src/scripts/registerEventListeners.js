@@ -1,6 +1,6 @@
 import { fetchAllElements } from "../utils/html";
 
-import { getGameController } from "../game";
+import { getGameController } from "../game/GameController";
 
 export const registerEventListeners = () => {
     const elements = fetchAllElements(".game-table__cell");
@@ -10,7 +10,7 @@ export const registerEventListeners = () => {
             const { target: { classList } } = e;
 
             if (classList.contains("cell-selected")) return;
-            console.log('do a thing...');
+            console.log('test');
             const controller = getGameController();
 
             const activePlayer = controller.getActivePlayer;

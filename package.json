@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.8",
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.4.0",
     "eslint": "^7.32.0",

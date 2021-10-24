@@ -1,7 +1,6 @@
 import * as scripts from "./scripts";
+// import { subscribe } from './lib/pubSub';
 
 import './index.scss';
 
-// // setup the game like a champion
 Object.values(scripts.default).forEach((step) => step.call());
-
