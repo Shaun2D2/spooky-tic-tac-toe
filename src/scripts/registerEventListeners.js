@@ -15,7 +15,7 @@ export const registerEventListeners = () => {
 
       const controller = getGameController();
 
-      const activePlayer = controller.getActivePlayer;
+      const { activePlayer } = controller;
 
       controller.playerSelection(e.target.id);
 

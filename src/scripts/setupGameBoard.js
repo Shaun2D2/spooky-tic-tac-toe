@@ -1,11 +1,15 @@
 import { createElement } from '../utils';
 
 const table = (content) => `
-    <table class="game-table">
-        <tbody>
-            ${content}
-        </tbody>
-    </table>
+    <div class="card">
+        <div class="card__body">
+            <table class="game-table">
+                <tbody>
+                    ${content}
+                </tbody>
+            </table>
+        </div>
+    </div>
 `;
 
 const card = (content) => `
@@ -109,4 +113,4 @@ export const setupGameBoard = () => {
   UI_CONFIG.forEach((config) => createElement(config));
 };
 
-export default setupGameBoard();
+export default setupGameBoard;

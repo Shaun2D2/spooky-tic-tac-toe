@@ -1,22 +1,26 @@
-import { publish } from "../lib/pubSub";
+import { publish } from '../lib/pubSub';
 
-import winConditions from "../const/conditions";
-import Player from "./Player";
+import winConditions from '../const/conditions';
+import Player from './Player';
 
 const coinFlip = () => Math.floor(Math.random() * 2);
 
 export class GameController {
-  constructor({ forceStartPlayer, player1 = "", player2 = "" } = {}) {
-    if (![null, 0, 1].includes(forceStartPlayer))
-      throw new Error("a forced start player must be either 1 or 0 intger");
+  constructor({ forceStartPlayer = null, player1 = '', player2 = '' } = {}) {
+    if (![null, 0, 1].includes(forceStartPlayer)) { throw new Error('a forced start player must be either 1 or 0 intger'); }
 
     this.players = [new Player(player1), new Player(player2)];
 
     this.activePlayer = forceStartPlayer || coinFlip();
 
-    (this.lastWinner = null), (this.roundCount = 0), (this.roundMove = 0);
+    this.lastWinner = null;
+    this.roundCount = 0;
+    this.roundMove = 0;
   }
 
+  /**
+   * we need to fix this, super inefficient!
+   */
   checkWinners() {
     let winner = null;
 
@@ -32,9 +36,9 @@ export class GameController {
         targetPlayer.history.forEach((id) => {
           if (condition.includes(id)) streak += 1;
         });
-
+        console.log(`the streak is ${streak}`);
         if (streak === 3) {
-          winner = player;
+          winner = targetPlayer;
           break;
         }
       }
@@ -44,12 +48,12 @@ export class GameController {
   }
 
   playerSelection(cellId) {
-    this.players[this.getActivePlayer].history.push(cellId);
+    this.players[this.activePlayer].addHistory(cellId);
 
-    const winner = this.checkWinner();
+    const winner = this.checkWinners();
 
     if (winner) {
-      publish("winner", winner);
+      publish('winner', winner);
 
       alert(`looks like ${winner.name} has won the game, nice job!`);
       window.location.reload(); // simple reload to reset the game for now until I get better UI;
@@ -61,7 +65,7 @@ export class GameController {
     this.players.roundMove += 1;
 
     if (this.players.roundMove === 9) {
-      alert("cats game");
+      alert('cats game');
     }
 
     return this;

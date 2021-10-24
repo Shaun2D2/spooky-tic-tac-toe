@@ -1,4 +1,4 @@
-import { Inventory } from "./Inventory";
+import { Inventory } from './Inventory';
 
 class Player {
   constructor(name) {
@@ -17,7 +17,7 @@ class Player {
     this.winCount += 1;
   }
 
-  set history(move) {
+  addHistory(move) {
     this.history.push(move);
   }
 }

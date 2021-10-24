@@ -34,6 +34,11 @@
   overflow: hidden;
   transition: opacity 0.3s;
   visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left:0;
+  bottom: 0;
 }
 
 .full-screen-takeover--show {
