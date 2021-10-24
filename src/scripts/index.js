@@ -4,8 +4,8 @@ import { registerEventListeners } from './registerEventListeners';
 import { embedHelpFloater } from './embedHelpFloater';
 
 export default {
-    setupGameBoard,
-    // setupTitle,
-    // embedHelpFloater,
-    registerEventListeners,
-}
+  setupGameBoard,
+  // setupTitle,
+  // embedHelpFloater,
+  registerEventListeners,
+};

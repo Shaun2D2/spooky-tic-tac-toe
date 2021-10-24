@@ -1,4 +1,4 @@
-import { createElement } from "../utils"
+import { createElement } from '../utils';
 
 const table = (content) => `
     <table class="game-table">
@@ -67,55 +67,54 @@ const fullScreenTakeover = `
 `;
 
 const UI_CONFIG = [
-    {
-        target: 'body',
-        content: fullScreenTakeover
-    }
-    // {
-    //     target: 'body',
-    //     tag: 'div',
-    //     attributes: {
-    //         class: 'play-area'
-    //     }
-    // },
-    // {
-    //     target: '.play-area',
-    //     tag: 'div',
-    //     attributes: {
-    //         class: 'game-details'
-    //     }
-    // },
-    // {
-    //     target: '.play-area',
-    //     tag: 'div',
-    //     attributes: {
-    //         class: 'game-board'
-    //     }
-    // },
-    // {
-    //     target: '.game-details',
-    //     content: [
-    //         activePlayerCard,
-    //         scoreCard
-    //     ]
-    // },
-    // {
-    //     target: '.game-board',
-    //     content: gameTable
-    // }
+  {
+    target: 'body',
+    content: fullScreenTakeover,
+  },
+  // {
+  //     target: 'body',
+  //     tag: 'div',
+  //     attributes: {
+  //         class: 'play-area'
+  //     }
+  // },
+  // {
+  //     target: '.play-area',
+  //     tag: 'div',
+  //     attributes: {
+  //         class: 'game-details'
+  //     }
+  // },
+  // {
+  //     target: '.play-area',
+  //     tag: 'div',
+  //     attributes: {
+  //         class: 'game-board'
+  //     }
+  // },
+  // {
+  //     target: '.game-details',
+  //     content: [
+  //         activePlayerCard,
+  //         scoreCard
+  //     ]
+  // },
+  // {
+  //     target: '.game-board',
+  //     content: gameTable
+  // }
 ];
 
-
 export const setupGameBoard = () => {
-    UI_CONFIG.forEach(config => createElement(config));
+  UI_CONFIG.forEach((config) => createElement(config));
 
-    // const el = findHtmlElement('#game-table');
+  // const el = findHtmlElement('#game-table');
 
-    // let tableHtml = '';
+  // let tableHtml = '';
 
-    // for(let i = 0; i < 3; i++) {
-    //     tableHtml += createTableRow(i + 1);
-    // }
+  // for(let i = 0; i < 3; i++) {
+  //     tableHtml += createTableRow(i + 1);
+  // }
 
-    // injectHtmlContent(el, `<tbody>${tableHtml}</tbody>`);
-}
+  // injectHtmlContent(el, `<tbody>${tableHtml}</tbody>`);
+};

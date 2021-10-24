@@ -1,5 +1,5 @@
-import { injectHtmlElement } from "../utils"
+import { injectHtmlElement } from '../utils';
 
 export const embedHelpFloater = () => {
-    injectHtmlElement('#game-area', 'div', 'game-help');
-}
+  injectHtmlElement('#game-area', 'div', 'game-help');
+};

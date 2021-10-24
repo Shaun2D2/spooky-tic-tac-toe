@@ -1,24 +1,24 @@
 const TOPICS = {};
 
 const subscribe = (topic, fn) => {
-    if (!TOPICS[topic]) {
-        TOPICS[topic] = [];
-    }
+  if (!TOPICS[topic]) {
+    TOPICS[topic] = [];
+  }
 
-    TOPICS[topic].push(fn);
+  TOPICS[topic].push(fn);
 };
 
 const publish = (topic, args) => {
-    const targetTopic = TOPICS[topic];
+  const targetTopic = TOPICS[topic];
 
-    if (!targetTopic) return false;
+  if (!targetTopic) return false;
 
-    targetTopic.forEach(topicFn => topicFn(args));
+  targetTopic.forEach((topicFn) => topicFn(args));
 
-    return true;
+  return true;
 };
 
 export {
-    publish,
-    subscribe
-}
+  publish,
+  subscribe,
+};

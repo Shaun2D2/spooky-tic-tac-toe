@@ -1,18 +1,18 @@
 class Inventory {
-    constructor(playerId) {
-        this.playerId = playerId;
-        this.items = {};
-    }
+  constructor(playerId) {
+    this.playerId = playerId;
+    this.items = {};
+  }
 
-    addItem(id) {
+  addItem(id) {
 
-    }
+  }
 
-    removeItem(id) {
+  removeItem(id) {
 
-    }
+  }
 
-    useItem(id) {
+  useItem(id) {
 
-    }
+  }
 }

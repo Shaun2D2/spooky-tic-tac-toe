@@ -6,7 +6,7 @@
   "scripts": {
     "local": "npx webpack --watch --mode development ",
     "build": "npx webpack ./src --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "npx eslint ./src --fix"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +16,7 @@
     "babel-loader": "^8.2.3",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.4.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.1.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.2",
     "file-loader": "^6.2.0",
