@@ -33,6 +33,8 @@ export const registerEventListeners = () => {
       el.classList.remove('full-screen-takeover--show');
 
       el.classList.add('full-screen-takeover--hide');
+
+      setTimeout(() => el.classList.remove('full-screen-takeover--hide'), 1500);
     });
 };
 
