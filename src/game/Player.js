@@ -1,8 +1,10 @@
 import { Inventory } from './Inventory';
 
 class Player {
-  constructor(name) {
+  constructor(name, avatar) {
     this.name = name;
+    this.avatar = avatar;
+    this.health = 100;
     this.winCount = 0;
     this.history = [];
 
@@ -19,6 +21,10 @@ class Player {
 
   addHistory(move) {
     this.history.push(move);
+  }
+
+  damage() {
+    this.health -= 10;
   }
 }
 

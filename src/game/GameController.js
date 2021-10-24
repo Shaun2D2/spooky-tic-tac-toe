@@ -6,16 +6,19 @@ import Player from './Player';
 const coinFlip = () => Math.floor(Math.random() * 2);
 
 export class GameController {
-  constructor({ forceStartPlayer = null, player1 = '', player2 = '' } = {}) {
+  constructor({ forceStartPlayer = null, player1 = 'Orc', player2 = 'Knight' } = {}) {
     if (![null, 0, 1].includes(forceStartPlayer)) { throw new Error('a forced start player must be either 1 or 0 intger'); }
 
-    this.players = [new Player(player1), new Player(player2)];
+    this.players = [new Player(player1, 'orc'), new Player(player2, 'knight')];
 
     this.activePlayer = forceStartPlayer || coinFlip();
 
     this.lastWinner = null;
     this.roundCount = 0;
     this.roundMove = 0;
+
+    console.log(this.getActivePlayer);
+    publish('activePlayerChange', this.getActivePlayer);
   }
 
   /**
@@ -80,6 +83,8 @@ export class GameController {
 
   toggleActivePlayer() {
     this.activePlayer = this.activePlayer === 0 ? 1 : 0;
+
+    publish('activePlayerChange', this.getActivePlayer);
   }
 
   get getActivePlayer() {
@@ -88,6 +93,10 @@ export class GameController {
 }
 
 let gameController = null;
+
+export const createGameController = (config) => {
+  gameController = new GameController(config);
+}
 
 export const getGameController = (config) => {
   if (gameController) return gameController;

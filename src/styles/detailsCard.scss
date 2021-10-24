@@ -1,0 +1,48 @@
+.details {
+    display: flex;
+}
+
+.details__avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50px;
+    padding: .5rem;
+    border: 3px solid $eerie-black;
+    background-color: $black-olive;
+    margin-right: 2.5rem;
+}
+
+.details__player-stats {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.details__player-stats-name {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+}
+
+.details__player-stats-health {
+    height: 1rem;
+    width: 80%;
+    border: 1px solid $black-olive;
+    border-radius: .3rem;
+}
+
+.details__player-stats-health-inner {
+    width: 90%;
+    height: 100%;
+    background-color: $flame
+}
+
+.details__player-inventory {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

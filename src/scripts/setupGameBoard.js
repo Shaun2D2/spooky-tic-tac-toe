@@ -20,15 +20,16 @@ const card = (content) => `
     </div>
 `;
 
-const activePlayerCard = card`
-    <div class="player">
-        this is the players section!
-    </div>
-`;
-
 const scoreCard = card`
     <div class="details">
-        this is the details section!
+        <img src="./images/orc.svg" class="details__avatar" />
+        <div class="details__player-stats">
+            <div class="details__player-stats-name">Player 1</div>
+            <div class="details__player-stats-health">
+                <div class="details__player-stats-health-inner"></div>
+            </div>
+        </div>
+        <button class="details__player-inventory"><img src="./images/sack.svg"></button>
     </div>
 `;
 
@@ -50,30 +51,36 @@ const gameTable = table`
 </tr>
 `;
 
-const gameBoard = card`
-    ${gameTable}
+const fullScreenTakeover = (content, starburst, shootingStars) => `
+    <div class="full-screen-takeover">
+        ${starburst && '<div class="starburst"></div>'}
+        ${shootingStars && (`
+          <div class="starburst__star starburst__star--up-right"></div>
+          <div class="starburst__star starburst__star--up-left"></div>
+          <div class="starburst__star starburst__star--down-right"></div>
+          <div class="starburst__star starburst__star--down-left"></div>
+        `)}
+        ${content}
+      </div>
 `;
 
-const fullScreenTakeover = `
-    <div class="full-screen-takeover">
-        <div class="starburst"></div>
-        <div class="starburst__card">
-            <div class="starburst__card-body">
-                <img src="./images/potion.svg" class="starburst__image" />
-                <div class="starburst__description">
-                    <h3 class="starburst__card-title">Holy Water Found!</h3>
-                    <p class="starburst__card-description">Some really cool description here</p>
-                </div>
-                <button class="starburst__card-button">Dismiss</button>
-            </div>
+const itemCard = fullScreenTakeover(`
+  <div class="starburst__card">
+    <div class="starburst__card-body">
+        <img src="./images/potion.svg" class="starburst__image" />
+        <div class="starburst__description">
+            <h3 class="starburst__card-title">Holy Water Found!</h3>
+            <p class="starburst__card-description">Some really cool description here</p>
         </div>
+        <button class="starburst__card-button">Dismiss</button>
     </div>
-`;
+  </div>
+`, true, true);
 
 const UI_CONFIG = [
   {
     target: 'body',
-    content: fullScreenTakeover,
+    content: itemCard,
   },
   {
     target: 'body',
@@ -98,10 +105,7 @@ const UI_CONFIG = [
   },
   {
     target: '.game-details',
-    content: [
-      activePlayerCard,
-      scoreCard,
-    ],
+    content: scoreCard,
   },
   {
     target: '.game-board',

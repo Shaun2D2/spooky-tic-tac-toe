@@ -1,9 +1,9 @@
 .play-area {
-  height: 100%;
   height: 100vh;
-  display: flex;
-  padding: 1.5rem;
   box-sizing: border-box;
-  justify-content: space-between;
   display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
