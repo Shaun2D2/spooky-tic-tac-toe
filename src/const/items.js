@@ -1,20 +1,37 @@
-const ITEMS = [
+export const ITEMS = [
     {
         id: 1,
-        name: 'holy water',
-        description: 'reverse your last move',
-        pickUpRate: .25
+        name: 'You Found Armor!',
+        description: 'You will now be protected from a loss.',
+        pickUpRate: .30,
+        image: './images/armor.svg'
     },
     {
         id: 2,
-        name: 'Vampire Steak',
-        description: 'Instant draw',
-        pickUpRate: .10
+        name: 'You Found Holy Water',
+        description: 'You can ward away Death if he shows his face',
+        pickUpRate: .25,
+        image: './images/sack.svg'
     },
     {
         id: 3,
-        name: 'holy grenade of antioch',
-        description: 'Instant win',
-        pickUpRate: .5
+        name: 'You tripped on a Magic Crystal',
+        description: 'You can reverse your last turn.',
+        pickUpRate: .10,
+        image: './images/magicCrystal.svg'
+    },
+    {
+        id: 4,
+        name: 'You Found a Magic Brew',
+        description: 'It will probably be fine to drink, maybe...',
+        pickUpRate: .5,
+        image: './images/potion.svg'
+    },
+    {
+        id: 5,
+        name: 'Death Comes',
+        description: 'You are dead...',
+        pickUpRate: .1,
+        images: './images/death.svg'
     }
 ]

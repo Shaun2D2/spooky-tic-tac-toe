@@ -55,7 +55,7 @@ const fullScreenTakeover = `
         <div class="starburst"></div>
         <div class="starburst__card">
             <div class="starburst__card-body">
-                <img src="https://via.placeholder.com/250" class="starburst__image" />
+                <img src="./images/potion.svg" class="starburst__image" />
                 <div class="starburst__description">
                     <h3 class="starburst__card-title">Holy Water Found!</h3>
                     <p class="starburst__card-description">Some really cool description here</p>
