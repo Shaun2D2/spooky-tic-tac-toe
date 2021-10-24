@@ -1,3 +1,6 @@
 export {
-  createElement, findHtmlElement, injectHtmlContent, fetchAllElements,
-} from './html';
+  createElement,
+  findHtmlElement,
+  injectHtmlContent,
+  fetchAllElements,
+} from "./html";

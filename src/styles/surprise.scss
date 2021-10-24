@@ -1,135 +1,177 @@
 :root {
-    --stripe1: transparent;
-    --stripe2: #FFF;    
+  --stripe1: transparent;
+  --stripe2: #fff;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; visibility: visible }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes fadeOut {
-    from { opacity: 1; visibility: visible; }
-    to { opacity: 0; visibility: hidden; }
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .full-screen-takeover {
-    z-index: 2;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    transition: opacity .3s;
-    visibility: hidden;
+  z-index: 2;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: opacity 0.3s;
+  visibility: hidden;
 }
 
 .full-screen-takeover--show {
-    animation: fadeIn .5s forwards;
+  animation: fadeIn 0.5s forwards;
 }
 
 .full-screen-takeover--hide {
-    animation: fadeOut .5s forwards;
+  animation: fadeOut 0.5s forwards;
 }
 
 @keyframes spinner {
-    from { transform: rotate(0deg) scale(20); }
-    to { transform: rotate(365deg) scale(20); }
+  from {
+    transform: rotate(0deg) scale(20);
+  }
+  to {
+    transform: rotate(365deg) scale(20);
+  }
 }
 
 .starburst {
-    animation: spinner 10s linear infinite;
-    height: 5.5rem;
-    width: 5.5rem;
-    border-radius: 50%;
-    background-size: 200% 100%;
-    background-position: 50% 50%;
-    background-attachment:fixed;
-    background-repeat: no-repeat;  
-    background: conic-gradient(
-        var(--stripe1) 0%,  var(--stripe1) 5%,
-        var(--stripe2) 5%,  var(--stripe2) 10%,
-        var(--stripe1) 10%, var(--stripe1) 15%,
-        var(--stripe2) 15%, var(--stripe2) 20%,
-        var(--stripe1) 20%, var(--stripe1) 25%,
-        var(--stripe2) 25%, var(--stripe2) 30%,
-        var(--stripe1) 30%, var(--stripe1) 35%,
-        var(--stripe2) 35%, var(--stripe2) 40%,
-        var(--stripe1) 40%, var(--stripe1) 45%,
-        var(--stripe2) 45%, var(--stripe2) 50%,
-        var(--stripe1) 50%, var(--stripe1) 55%,
-        var(--stripe2) 55%, var(--stripe2) 60%,
-        var(--stripe1) 60%, var(--stripe1) 65%,
-        var(--stripe2) 65%, var(--stripe2) 70%,
-        var(--stripe1) 70%, var(--stripe1) 75%,
-        var(--stripe2) 75%, var(--stripe2) 80%,
-        var(--stripe1) 80%, var(--stripe1) 85%,
-        var(--stripe2) 85%, var(--stripe2) 90%,
-        var(--stripe1) 90%, var(--stripe1) 95%,
-        var(--stripe2) 95%, var(--stripe2) 100%
-      );
+  animation: spinner 10s linear infinite;
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+  background-size: 200% 100%;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background: conic-gradient(
+    var(--stripe1) 0%,
+    var(--stripe1) 5%,
+    var(--stripe2) 5%,
+    var(--stripe2) 10%,
+    var(--stripe1) 10%,
+    var(--stripe1) 15%,
+    var(--stripe2) 15%,
+    var(--stripe2) 20%,
+    var(--stripe1) 20%,
+    var(--stripe1) 25%,
+    var(--stripe2) 25%,
+    var(--stripe2) 30%,
+    var(--stripe1) 30%,
+    var(--stripe1) 35%,
+    var(--stripe2) 35%,
+    var(--stripe2) 40%,
+    var(--stripe1) 40%,
+    var(--stripe1) 45%,
+    var(--stripe2) 45%,
+    var(--stripe2) 50%,
+    var(--stripe1) 50%,
+    var(--stripe1) 55%,
+    var(--stripe2) 55%,
+    var(--stripe2) 60%,
+    var(--stripe1) 60%,
+    var(--stripe1) 65%,
+    var(--stripe2) 65%,
+    var(--stripe2) 70%,
+    var(--stripe1) 70%,
+    var(--stripe1) 75%,
+    var(--stripe2) 75%,
+    var(--stripe2) 80%,
+    var(--stripe1) 80%,
+    var(--stripe1) 85%,
+    var(--stripe2) 85%,
+    var(--stripe2) 90%,
+    var(--stripe1) 90%,
+    var(--stripe1) 95%,
+    var(--stripe2) 95%,
+    var(--stripe2) 100%
+  );
 }
 
 @keyframes grow {
-    from { transform: scale(0) }
-    to { transform: scale(1) }
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 @keyframes shrink {
-    from { transform: scale(1) }
-    to { transform: scale(0) }
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
 }
 
 .starburst__card {
-    position: absolute;
-    border: 1px solid $black-olive;
-    background-color: $eerie-black;
-    width: 300px;
-    height: 500px;
-    padding: .5rem;
-    border-radius: 25px;
-    .full-screen-takeover--show & {
-        animation: grow 1s cubic-bezier(.63,.05,.43,1.7) forwards;
-    }
-    .full-screen-takeover--hide & {
-        animation: shrink 1s cubic-bezier(.63,.05,.43,1.7) forwards;
-    }
+  position: absolute;
+  border: 1px solid $black-olive;
+  background-color: $eerie-black;
+  width: 300px;
+  height: 500px;
+  padding: 0.5rem;
+  border-radius: 25px;
+  .full-screen-takeover--show & {
+    animation: grow 1s cubic-bezier(0.63, 0.05, 0.43, 1.7) forwards;
+  }
+  .full-screen-takeover--hide & {
+    animation: shrink 1s cubic-bezier(0.63, 0.05, 0.43, 1.7) forwards;
+  }
 }
 
 .starburst__card-body {
-    border: 1px solid $eerie-black;
-    height: 100%;
-    border-radius: 25px;
-    padding: 1.5rem;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    background-color: $black-olive;
+  border: 1px solid $eerie-black;
+  height: 100%;
+  border-radius: 25px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: $black-olive;
 }
 
 .starburst__image {
-    border-radius: 100%;
+  border-radius: 100%;
 }
 
 .starburst__description {
-    color: $white;
+  color: $white;
 }
 
 .starburst__card-title {
-    font-family: 'Henny Penny', cursive;
-    text-align: center;
-    font-size: 1.5rem;
+  font-family: "Henny Penny", cursive;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .starburst__card-button {
-    background-color: transparent;
-    padding: .5rem;
-    border: 1px solid $white;
-    color: $white;
-    border-radius: .5rem;
-    cursor: pointer;
-    font-weight: bold;
-
+  background-color: transparent;
+  padding: 0.5rem;
+  border: 1px solid $white;
+  color: $white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
 }

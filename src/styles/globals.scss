@@ -1,13 +1,13 @@
 body {
-    background-color: $background;
-    margin: 0;
-    padding: 0;
+  background-color: $background;
+  margin: 0;
+  padding: 0;
 }
 
 #game-area {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }

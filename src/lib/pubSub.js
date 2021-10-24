@@ -18,7 +18,4 @@ const publish = (topic, args) => {
   return true;
 };
 
-export {
-  publish,
-  subscribe,
-};
+export { publish, subscribe };

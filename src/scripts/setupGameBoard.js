@@ -1,4 +1,4 @@
-import { createElement } from '../utils';
+import { createElement } from "../utils";
 
 const table = (content) => `
     <table class="game-table">
@@ -68,7 +68,7 @@ const fullScreenTakeover = `
 
 const UI_CONFIG = [
   {
-    target: 'body',
+    target: "body",
     content: fullScreenTakeover,
   },
   // {

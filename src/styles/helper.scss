@@ -1,42 +1,42 @@
 #game-help {
-    position: fixed;
-    right: 100px;
-    bottom: 100px;
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: $black-olive;
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
+  &::after {
+    font-family: "Creepster", cursive;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50px;
     height: 50px;
-    border-radius: 100%;
+    content: "?";
+    color: $flora-white;
+    font-size: 2.5rem;
+  }
+  &::before {
+    display: none;
+    position: absolute;
+    left: -150px;
+    content: "Enjoy playing some fun, classic tic tac toe!";
     background-color: $black-olive;
-    transition: transform .2s ease-in;
-    cursor: pointer;
-    &::after {
-        font-family: 'Creepster', cursive;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        content: "?";
-        color: $flora-white;
-        font-size: 2.5rem;
-    }
+    transition: display 0.2s;
+    padding: 5px;
+    color: $flora-white;
+    width: 250px;
+    transform: translateX(-50%);
+    border-radius: 5px;
+  }
+  &:hover {
+    transform: scale(1.2);
     &::before {
-        display: none;
-        position: absolute;
-        left: -150px;
-        content: 'Enjoy playing some fun, classic tic tac toe!';
-        background-color: $black-olive;
-        transition: display .2s;
-        padding: 5px;
-        color: $flora-white;
-        width: 250px;
-        transform: translateX(-50%);
-        border-radius: 5px;
+      display: block !important;
     }
-    &:hover {
-        transform: scale(1.2);
-        &::before {
-            display: block !important;
-        }
-    }
+  }
 }
