@@ -1,4 +1,4 @@
-import { injectHtmlElement, injectHtmlContent, findHtmlElement, createElement } from "../utils"
+import { createElement } from "../utils"
 
 const table = (content) => `
     <table class="game-table">
