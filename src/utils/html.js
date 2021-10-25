@@ -4,7 +4,7 @@ export const composeElement = ({
   ([key, value]) => `${key}=${value} `,
 )}>${content}</${tag}>`;
 
-export const fetchElement = (element) => document.querySelector(element);
+export const fetchElement = (element) => (typeof element === 'object' ? element : document.querySelector(element));
 
 export const fetchAllElements = (selector) => document.querySelectorAll(selector);
 
@@ -34,7 +34,6 @@ export const injectHtmlContent = (el, html) => {
 export const findHtmlElement = (name) => document.querySelector(name);
 
 export const updateElement = ({ target, content, attributes = {} }) => {
-  console.log(target);
   const el = fetchElement(target);
 
   if (content) {
@@ -43,3 +42,15 @@ export const updateElement = ({ target, content, attributes = {} }) => {
 
   Object.entries(attributes).forEach(([key, value]) => el.setAttribute(key, value));
 };
+
+export const updateElements = (configArray = []) => {
+  configArray.forEach((config) => updateElement(config));
+};
+
+export const addListener = (config) => {
+  const el = fetchElement(config.target);
+
+  el.addEventListener(config.type, config.handler);
+};
+
+export const addOnClick = (config) => addListener({ type: 'click', ...config });

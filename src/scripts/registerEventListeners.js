@@ -24,18 +24,6 @@ export const registerEventListeners = () => {
       classList.add(`cell-selected-${activePlayer}`);
     });
   });
-
-  document
-    .querySelector('.starburst__card-button')
-    .addEventListener('click', () => {
-      const el = document.querySelector('.full-screen-takeover');
-
-      el.classList.remove('full-screen-takeover--show');
-
-      el.classList.add('full-screen-takeover--hide');
-
-      setTimeout(() => el.classList.remove('full-screen-takeover--hide'), 1500);
-    });
 };
 
 export default registerEventListeners;

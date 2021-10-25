@@ -51,36 +51,12 @@ const gameTable = table`
 </tr>
 `;
 
-const fullScreenTakeover = (content, starburst, shootingStars) => `
-    <div class="full-screen-takeover">
-        ${starburst && '<div class="starburst"></div>'}
-        ${shootingStars && (`
-          <div class="starburst__star starburst__star--up-right"></div>
-          <div class="starburst__star starburst__star--up-left"></div>
-          <div class="starburst__star starburst__star--down-right"></div>
-          <div class="starburst__star starburst__star--down-left"></div>
-        `)}
-        ${content}
-      </div>
-`;
-
-const itemCard = fullScreenTakeover(`
-  <div class="starburst__card">
-    <div class="starburst__card-body">
-        <img src="./images/potion.svg" class="starburst__image" />
-        <div class="starburst__description">
-            <h3 class="starburst__card-title">Holy Water Found!</h3>
-            <p class="starburst__card-description">Some really cool description here</p>
-        </div>
-        <button class="starburst__card-button">Dismiss</button>
-    </div>
-  </div>
-`, true, true);
+const rootFST = '<div class="full-screen-takeover-root"></div>';
 
 const UI_CONFIG = [
   {
     target: 'body',
-    content: itemCard,
+    content: rootFST,
   },
   {
     target: 'body',

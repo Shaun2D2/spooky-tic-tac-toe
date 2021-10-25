@@ -3,6 +3,8 @@ import { publish } from '../lib/pubSub';
 import winConditions from '../const/conditions';
 import Player from './Player';
 
+import { launchTextFST } from '../utils/fullScreenTakeover';
+
 const coinFlip = () => Math.floor(Math.random() * 2);
 
 export class GameController {
@@ -17,7 +19,6 @@ export class GameController {
     this.roundCount = 0;
     this.roundMove = 0;
 
-    console.log(this.getActivePlayer);
     publish('activePlayerChange', this.getActivePlayer);
   }
 
@@ -39,7 +40,7 @@ export class GameController {
         targetPlayer.history.forEach((id) => {
           if (condition.includes(id)) streak += 1;
         });
-        console.log(`the streak is ${streak}`);
+
         if (streak === 3) {
           winner = targetPlayer;
           break;
@@ -57,9 +58,6 @@ export class GameController {
 
     if (winner) {
       publish('winner', winner);
-
-      alert(`looks like ${winner.name} has won the game, nice job!`);
-      window.location.reload(); // simple reload to reset the game for now until I get better UI;
       return;
     }
 
@@ -70,8 +68,6 @@ export class GameController {
     if (this.players.roundMove === 9) {
       alert('cats game');
     }
-
-    return this;
   }
 
   nextRound() {
@@ -96,7 +92,7 @@ let gameController = null;
 
 export const createGameController = (config) => {
   gameController = new GameController(config);
-}
+};
 
 export const getGameController = (config) => {
   if (gameController) return gameController;
