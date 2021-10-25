@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./src/images/orc.svg" />
+    <img src="./src/images/orc.svg" width="150px" />
 </p>
 
 # Tic Tac Toe Quest
