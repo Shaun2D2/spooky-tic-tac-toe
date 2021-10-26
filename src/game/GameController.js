@@ -2,8 +2,9 @@ import { publish } from '../lib/pubSub';
 
 import winConditions from '../const/conditions';
 import Player from './Player';
+import { treasureDrop } from './ItemDrop';
 
-import { launchTextFST } from '../utils/fullScreenTakeover';
+// import { launchTextFST } from '../utils/fullScreenTakeover';
 
 const coinFlip = () => Math.floor(Math.random() * 2);
 
@@ -23,7 +24,7 @@ export class GameController {
   }
 
   /**
-   * we need to fix this, super inefficient!
+   * This seriously needs to be optimized!
    */
   checkWinners() {
     let winner = null;
@@ -34,7 +35,7 @@ export class GameController {
       const targetPlayer = this.players[i];
 
       for (let j = 0; j < winConditions.length; j += 1) {
-        const condition = winConditions[i];
+        const condition = winConditions[j];
         let streak = 0;
 
         targetPlayer.history.forEach((id) => {
@@ -58,23 +59,39 @@ export class GameController {
 
     if (winner) {
       publish('winner', winner);
+
+      this.nextRound();
       return;
+    }
+
+    const treasure = treasureDrop();
+
+    if (treasure) {
+      publish('treasure', treasure);
+
+      this.getActivePlayer.inventory.addItem(treasure);
     }
 
     this.toggleActivePlayer();
 
-    this.players.roundMove += 1;
+    this.roundMove += 1;
 
-    if (this.players.roundMove === 9) {
+    if (this.roundMove === 9) {
+      /**
+       * we need to make this a proper alert...
+       */
       alert('cats game');
+      this.nextRound();
     }
   }
 
   nextRound() {
-    const { players } = this;
+    this.roundCount += 1;
+    this.roundMove = 0;
 
-    players.roundCount += 1;
-    players.roundMove = 0;
+    this.players.map((player) => player.resetHistory());
+
+    setTimeout(() => publish('round_reset'), 300);
   }
 
   toggleActivePlayer() {
@@ -92,6 +109,8 @@ let gameController = null;
 
 export const createGameController = (config) => {
   gameController = new GameController(config);
+
+  return gameController;
 };
 
 export const getGameController = (config) => {

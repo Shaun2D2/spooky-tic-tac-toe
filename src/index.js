@@ -5,6 +5,7 @@ import { subscribe } from './lib/pubSub';
 import { updatePlayerCard } from './utils/updatePlayerCard';
 import { createGameController } from './game/GameController';
 import trans from './utils/translations';
+import { fetchAllElements } from './utils/html';
 
 import './index.scss';
 
@@ -18,7 +19,15 @@ subscribe('winner', (player) => {
   launchTextFST({ type: 'victory', image: player.avatar, title: `${player.name} has won the match!` });
 });
 
-createGameController();
+subscribe('treasure', (item) => {
+  launchCardFST(item);
+});
+
+subscribe('round_reset', () => {
+  fetchAllElements('.cell-selected').forEach((el) => el.classList.remove('cell-selected', 'cell-selected-0', 'cell-selected-1'));
+});
+
+const controller = createGameController();
 
 launchTextFST({
   image: 'fairy',
@@ -35,4 +44,5 @@ window.dev = {
   dismissFST() {
     this.getFST().classList.remove('full-screen-takeover--show');
   },
+  controller,
 };

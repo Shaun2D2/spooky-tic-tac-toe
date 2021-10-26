@@ -1,10 +1,12 @@
 export class Inventory {
   constructor(playerId) {
     this.playerId = playerId;
-    this.items = {};
+    this.items = [];
   }
 
-  // addItem(id) {}
+  addItem(item) {
+    this.items.push(item);
+  }
 
   // removeItem(id) {}
 
